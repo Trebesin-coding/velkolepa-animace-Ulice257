@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                margin: 0;
+            }
+            h1 {
+                color: white;
+                font-family: monospace;
+            }
+
+            h2 {
+                color: rgb(255, 179, 0);
+                font-family: monospace;
+                font-size: 55px;
+            }
+
+            .box {
+                width: 500px;
+                border: 1px solid black;
+                background-color: black;
+                height: 50px;
+                display: block;
+                position: absolute;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                left: 840px;
+                margin-top: 5px;
+            }
+
+            .pozadi {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .Mapa {
+                height: 98vh;
+                position: absolute;
+            }
+
+            .Animace_postavy {
+                animation: skok_nahoru 20s, skok_strana 20s linear;
+            }
+
+            .Postava {
+                height: 200px;
+                display: block;
+                position: absolute;
+            }
+
+            #Mario {
+                right: 500px;
+                top: 630px;
+            }
+
+            .box1 {
+                width: 80px;
+                border: 8px solid rgb(245, 172, 0);
+                background-color: rgb(49, 105, 0);
+                height: 80px;
+                display: block;
+                position: absolute;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                left: 1410px;
+                margin-top: 570px;
+            }
+
+            .box2 {
+                width: 80px;
+                border: 8px solid rgb(245, 172, 0);
+                background-color: rgb(49, 105, 0);
+                height: 80px;
+                display: block;
+                position: absolute;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                left: 405px;
+                margin-top: 265px;
+            }
+
+            @keyframes skok_nahoru {
+                0% {
+                    translate: 0 0;
+                }
+
+                9% {
+                    translate: 0 -300px;
+                }
+                10% {
+                    translate: 0 -300px;
+                }
+
+                14% {
+                    translate: 0 -600px;
+                }
+
+                18% {
+                    translate: 0 -440px;
+                }
+
+                100% {
+                    translate: 0 -440px;
+                }
+            }
+
+            @keyframes skok_strana {
+                0% {
+                    transform: translate(0, 0);
+                }
+
+                6% {
+                    transform: translate(220px, 0);
+                }
+
+                8% {
+                    transform: translate(280px, 0);
+                }
+
+                10% {
+                    transform: translate(300px, 0);
+                }
+
+                14% {
+                    transform: translate(-450px, 0);
+                }
+
+                17% {
+                    transform: translate(-490px, 0);
+                }
+
+                18% {
+                    transform: translate(-500px, 0);
+                }
+
+                100% {
+                    transform: translate(-500px, 0);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="Pozadi">
+            <img class="Mapa" src="Mario_mapa.jpg" />
+            <img class="Postava" id="Mario" src="Mario.png" />
+            <div class="box">
+                <h1>Kam Mario skočí?</h1>
+            </div>
+            <div class="box1">
+                <h2>1</h2>
+            </div>
+            <div class="box2">
+                <h2>2</h2>
+            </div>
+        </div>
+
+        <script>
+            const tlacitko = document.querySelector(".box")
+            const Postava = document.querySelector(".Postava")
+
+            tlacitko.addEventListener("click", function () {
+                Postava.classList.toggle("Animace_postavy")
+            })
+        </script>
+    </body>
+</html>
